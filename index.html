@@ -12,9 +12,34 @@
 <body>
     <div class="container">
         <h1>Typing Speed Test</h1>
+
+        <div class="settings">
+            <div class="mode-select">
+                <h3>Mode:</h3>
+                <label><input type="radio" name="mode" value="sentence" checked> Sentence</label>
+                <label><input type="radio" name="mode" value="timed"> Timed</label>
+            </div>
+            <div class="time-select hidden">
+                <h3>Time:</h3>
+                <label><input type="radio" name="time" value="30"> 30s</label>
+                <label><input type="radio" name="time" value="60" checked> 60s</label>
+                <label><input type="radio" name="time" value="120"> 120s</label>
+            </div>
+        </div>
+
+        <div id="timer-container" class="hidden">
+            <p>Time Left: <span id="timer">0</span>s</p>
+        </div>
+
         <div id="sentence-container">
             <p id="sentence"></p>
         </div>
+
+        <div id="live-stats" class="hidden">
+            <p>Live WPM: <span id="live-wpm">0</span></p>
+            <p>Live Accuracy: <span id="live-accuracy">0</span>%</p>
+        </div>
+
         <textarea id="input" rows="3" placeholder="Start typing here..."></textarea>
         <div class="buttons">
             <button id="start-btn">Start Test</button>
@@ -26,7 +51,93 @@
             <p>Accuracy: <span id="accuracy">0</span>%</p>
             <p>Time Taken: <span id="time">0</span>s</p>
         </div>
+
+        <div id="keyboard">
+            <div class="keyboard-row">
+                <span class="key" data-key="`">`</span>
+                <span class="key" data-key="1">1</span>
+                <span class="key" data-key="2">2</span>
+                <span class="key" data-key="3">3</span>
+                <span class="key" data-key="4">4</span>
+                <span class="key" data-key="5">5</span>
+                <span class="key" data-key="6">6</span>
+                <span class="key" data-key="7">7</span>
+                <span class="key" data-key="8">8</span>
+                <span class="key" data-key="9">9</span>
+                <span class="key" data-key="0">0</span>
+                <span class="key" data-key="-">-</span>
+                <span class="key" data-key="=">=</span>
+                <span class="key wide" data-key="Backspace">Backspace</span>
+            </div>
+            <div class="keyboard-row">
+                <span class="key wide" data-key="Tab">Tab</span>
+                <span class="key" data-key="q">Q</span>
+                <span class="key" data-key="w">W</span>
+                <span class="key" data-key="e">E</span>
+                <span class="key" data-key="r">R</span>
+                <span class="key" data-key="t">T</span>
+                <span class="key" data-key="y">Y</span>
+                <span class="key" data-key="u">U</span>
+                <span class="key" data-key="i">I</span>
+                <span class="key" data-key="o">O</span>
+                <span class="key" data-key="p">P</span>
+                <span class="key" data-key="[">[</span>
+                <span class="key" data-key="]">]</span>
+                <span class="key wide" data-key="\">\\</span>
+            </div>
+            <div class="keyboard-row">
+                <span class="key wide" data-key="CapsLock">Caps Lock</span>
+                <span class="key" data-key="a">A</span>
+                <span class="key" data-key="s">S</span>
+                <span class="key" data-key="d">D</span>
+                <span class="key" data-key="f">F</span>
+                <span class="key" data-key="g">G</span>
+                <span class="key" data-key="h">H</span>
+                <span class="key" data-key="j">J</span>
+                <span class="key" data-key="k">K</span>
+                <span class="key" data-key="l">L</span>
+                <span class="key" data-key=";">;</span>
+                <span class="key" data-key="'">'</span>
+                <span class="key wide" data-key="Enter">Enter</span>
+            </div>
+            <div class="keyboard-row">
+                <span class="key wide" data-key="Shift">Shift</span>
+                <span class="key" data-key="z">Z</span>
+                <span class="key" data-key="x">X</span>
+                <span class="key" data-key="c">C</span>
+                <span class="key" data-key="v">V</span>
+                <span class="key" data-key="b">B</span>
+                <span class="key" data-key="n">N</span>
+                <span class="key" data-key="m">M</span>
+                <span class="key" data-key=",">,</span>
+                <span class="key" data-key=".">.</span>
+                <span class="key" data-key="/">/</span>
+                <span class="key wide" data-key="Shift">Shift</span>
+            </div>
+            <div class="keyboard-row">
+                <span class="key extra-wide" data-key=" ">Space</span>
+            </div>
+        </div>
+
+        <div id="history-container">
+            <h2>Your History</h2>
+            <table id="history-table">
+                <thead>
+                    <tr>
+                        <th>Mode</th>
+                        <th>WPM</th>
+                        <th>Accuracy</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body"></tbody>
+            </table>
+            <button id="clear-history-btn">Clear History</button>
+        </div>
     </div>
     <script src="script.js"></script>
+
+    <audio id="audio-correct" src=""></audio>
+    <audio id="audio-incorrect" src=""></audio>
 </body>
 </html>

@@ -24,6 +24,40 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
+.settings {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.mode-select, .time-select {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.settings h3 {
+    margin: 0;
+    font-weight: normal;
+    color: #555;
+}
+
+.settings label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+#timer-container {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 1rem;
+}
+
 #sentence-container {
     margin-bottom: 1.5rem;
     padding: 1rem;
@@ -41,6 +75,15 @@ h1 {
 #sentence .incorrect {
     color: red;
     text-decoration: underline;
+}
+
+#live-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #555;
 }
 
 textarea {
@@ -81,6 +124,46 @@ button:hover {
     background-color: #5a6268;
 }
 
+#keyboard {
+    margin-top: 2rem;
+    user-select: none;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.key {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    transition: all 0.1s ease;
+}
+
+.key.wide {
+    width: 100px;
+}
+
+.key.extra-wide {
+    width: 300px;
+}
+
+.key.key-pressed {
+    background-color: #007BFF;
+    color: white;
+    transform: scale(0.95);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
 #results {
     margin-top: 2rem;
 }
@@ -91,6 +174,40 @@ button:hover {
 
 h2 {
     color: #333;
+}
+
+#history-container {
+    margin-top: 3rem;
+    width: 100%;
+}
+
+#history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+#history-table th, #history-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+}
+
+#history-table th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+    color: #333;
+}
+
+#history-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+#clear-history-btn {
+    background-color: #dc3545;
+}
+
+#clear-history-btn:hover {
+    background-color: #c82333;
 }
 
 @media (max-width: 600px) {
