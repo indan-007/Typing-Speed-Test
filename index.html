@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Typing Speed Test</h1>
+        <div id="sentence-container">
+            <p id="sentence"></p>
+        </div>
+        <textarea id="input" rows="3" placeholder="Start typing here..."></textarea>
+        <div class="buttons">
+            <button id="start-btn">Start Test</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+        <div id="results" class="hidden">
+            <h2>Results</h2>
+            <p>WPM: <span id="wpm">0</span></p>
+            <p>Accuracy: <span id="accuracy">0</span>%</p>
+            <p>Time Taken: <span id="time">0</span>s</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
